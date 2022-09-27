@@ -6,7 +6,33 @@ import ReactDOM from "react-dom";
 import "../styles/index.css";
 
 //import your own components
-import Home from "./component/home.jsx";
+import Header from "./component/Header.jsx";
+import Navbar from "./component/navbar.jsx";
+import Cards from "./component/Cards.jsx";
+import Footer from "./component/footer.jsx";
 
 //render your react application
-ReactDOM.render(<Home />, document.querySelector("#app"));
+const Pagina = () => {
+    //here you have to return expected html using the properties being passed to the component
+    return (
+        <>
+        <Navbar/>
+        
+        <div className="container">
+        <Header/>
+        <Cards/>
+        
+
+        </div>
+        <Footer/>
+        </>
+        
+    );
+};
+
+
+
+ReactDOM.render(<Pagina/>, document.querySelector("body"));
+
+
+
