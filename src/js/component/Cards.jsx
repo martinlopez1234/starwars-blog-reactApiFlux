@@ -8,8 +8,9 @@ const Cards = () => {
 	return (
 		
 		<>
+        <div className="container col">
         <div className="row">
-        <div class="col text-center mb-4">
+        <div class="col-lg-3 mb-4 text-center ">
     <div class="card" >
   <img  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpdvATSPHH4Tt6TJyc4JFtJy0zMwSOj57xpRvOZfLGfuErJXWlIZWLjxbXItN4s1Drt-w&usqp=CAU" class="card-img-top" alt="..."/>
   <div class="card-body">
@@ -19,7 +20,7 @@ const Cards = () => {
   </div>
 </div>
 </div>
-<div class="col text-center">
+<div class="col-lg-3 mb-4 text-center">
     <div class="card" >
   <img  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpdvATSPHH4Tt6TJyc4JFtJy0zMwSOj57xpRvOZfLGfuErJXWlIZWLjxbXItN4s1Drt-w&usqp=CAU" class="card-img-top" alt="..."/>
   <div class="card-body">
@@ -29,7 +30,7 @@ const Cards = () => {
   </div>
 </div>
 </div>
-<div class="col text-center">
+<div class="col-lg-3 mb-4 text-center">
     <div class="card">
   <img  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpdvATSPHH4Tt6TJyc4JFtJy0zMwSOj57xpRvOZfLGfuErJXWlIZWLjxbXItN4s1Drt-w&usqp=CAU" class="card-img-top" alt="..."/>
   <div class="card-body">
@@ -39,7 +40,7 @@ const Cards = () => {
   </div>
 </div>
 </div>
-<div class="col text-center">
+<div class="col-lg-3 mb-4 text-center">
     <div class="card" >
   <img  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpdvATSPHH4Tt6TJyc4JFtJy0zMwSOj57xpRvOZfLGfuErJXWlIZWLjxbXItN4s1Drt-w&usqp=CAU" class="card-img-top" alt="..."/>
   <div class="card-body">
@@ -51,8 +52,7 @@ const Cards = () => {
 </div>
 
 </div>
-          
-      </>
+</div>
 	);
 };
 
