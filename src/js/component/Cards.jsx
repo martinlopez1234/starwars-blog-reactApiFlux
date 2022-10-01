@@ -7,8 +7,8 @@ import React from "react";
 const Cards = () => {
 	return (
 		
-		<>
-        <div className="container col">
+			<>
+        
         <div className="row">
         <div class="col-lg-3 mb-4 text-center ">
     <div class="card" >
@@ -52,7 +52,7 @@ const Cards = () => {
 </div>
 
 </div>
-</div>
+
 		</>
 	);
 };
