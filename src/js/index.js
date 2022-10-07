@@ -6,25 +6,18 @@ import ReactDOM from "react-dom";
 import "../styles/index.css";
 
 //import your own components
-import Header from "./component/Header.jsx";
-import Navbar from "./component/navbar.jsx";
-import Cards from "./component/Cards.jsx";
-import Footer from "./component/footer.jsx";
+
+import People from "./component/personajes.jsx";
+
 
 //render your react application
 const Pagina = () => {
     //here you have to return expected html using the properties being passed to the component
     return (
         <>
-        <Navbar/>
+        <People/>
         
-        <div className="container">
-        <Header/>
-        <Cards/>
-        
-
-        </div>
-        <Footer/>
+       
         </>
         
     );
