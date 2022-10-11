@@ -8,7 +8,7 @@ import "../styles/index.css";
 //import your own components
 
 import People from "./component/personajes.jsx";
-
+import Planetas from "./component/Planetas.jsx";
 
 //render your react application
 const Pagina = () => {
@@ -16,6 +16,7 @@ const Pagina = () => {
     return (
         <>
         <People/>
+        <Planetas/>
         
        
         </>
@@ -26,6 +27,5 @@ const Pagina = () => {
 
 
 ReactDOM.render(<Pagina/>, document.querySelector("body"));
-
 
 
