@@ -12,7 +12,7 @@ useEffect(()=>{
     redirect: 'follow'
   };
   
-  fetch("https://www.swapi.tech/api/people", requestOptions)
+  fetch("https://swapi.dev/api/people/", requestOptions)
     .then(response => response.json())
     .then(result => {
       console.log(result)
@@ -32,17 +32,20 @@ useEffect(()=>{
 <h2 className="text-danger mt-3">Personajes</h2>
 </div>
 <div className="container mt-4">
-<div class=" row row-cols-2 row-cols-md-6 g-4">
+<div class=" row row-cols-2 row-cols-md-5 g-2">
 
-{informacion && informacion?.results.map(({name})=>{
+{informacion && informacion.results.map((item, index)=>{
   {console.log("name",name)}
 return <div class="col">
-  <div class="card">
+  <div class="card" key={index} >
   <img  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpdvATSPHH4Tt6TJyc4JFtJy0zMwSOj57xpRvOZfLGfuErJXWlIZWLjxbXItN4s1Drt-w&usqp=CAU" class="card-img-top" alt="..."/>
     <div class="card-body">
-      <h5 class="card-title">{name}</h5>
-      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-      <button className="btn btn-primary">more info</button>
+      <h5 class="card-title">{item.name}</h5>
+      <p class="card-text">Gender: {item.gender}</p>
+      <p class="card-text">Hair Color: {item.hair_color}</p>
+      <p class="card-text">Eye-Color: {item.eye_color}</p>
+      <button className="btn btn-outline-primary">Learn more!</button>
+      <button className="far fa-heart ml-3"></button>
     </div>
   </div>
 </div>
