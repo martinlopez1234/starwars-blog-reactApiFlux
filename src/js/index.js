@@ -12,7 +12,7 @@ import "../styles/index.css";
 import App from "./App.js";
 
 import { BrowserRouter } from "react-router-dom";
-
+import Home from "./page/Home.jsx";
 import Nabvar from "./component/Nabvar.jsx";
 //render your react application
 const Pagina = () => {
@@ -20,7 +20,7 @@ const Pagina = () => {
     return (
         <>
        <BrowserRouter>
-        <Nabvar/>
+        
         
        <App/>
         
