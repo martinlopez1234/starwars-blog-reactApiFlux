@@ -1,5 +1,6 @@
 import React,{useEffect,useState} from "react";
 
+
 //create your first component
 
 const People = () => {
@@ -28,6 +29,7 @@ useEffect(()=>{
 
 <>
 
+
 <div className="container">
 <h2 className="text-danger mt-3">Personajes</h2>
 </div>
@@ -44,7 +46,7 @@ return <div class="col">
       <p class="card-text">Gender: {item.gender}</p>
       <p class="card-text">Hair Color: {item.hair_color}</p>
       <p class="card-text">Eye-Color: {item.eye_color}</p>
-      <button className="btn btn-outline-primary">Learn more!</button>
+      <button className="btn btn-outline-primary">mami</button>
       <button className="far fa-heart ml-3"></button>
     </div>
   </div>
@@ -63,5 +65,7 @@ return <div class="col">
    
 	);
 };
+
+
 
 export default People;

@@ -4,7 +4,7 @@ import React,{useEffect,useState} from "react";
 
 const Planetas = () => {
   
-const [informacion,setInformacion] = useState();
+const [planetas,setPlanetas] = useState();
 
 useEffect(()=>{
   var requestOptions = {
@@ -16,7 +16,7 @@ useEffect(()=>{
     .then(response => response.json())
     .then(result => {
       console.log(result)
-      setInformacion(result)
+      setPlanetas(result)
     })
     .catch(error => console.log('error', error));
     
@@ -34,7 +34,7 @@ useEffect(()=>{
 <div className="container mt-4">
 <div class=" row row-cols-2 row-cols-md-5 g-2">
 
-{informacion && informacion?.results.map((item,index)=>{
+{planetas && planetas?.results.map((item,index)=>{
   {console.log("name",name)}
 return <div class="col" key={index}>
   <div class="card">
