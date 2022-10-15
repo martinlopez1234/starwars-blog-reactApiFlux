@@ -1,6 +1,6 @@
 import React,{useEffect,useState} from "react";
 import { Link } from "react-router-dom";
-
+import Nabvar from "../component/Nabvar.jsx";
 
 //create your first component
 
@@ -46,7 +46,7 @@ useEffect(()=>{
 	return (
 
 <>
-
+<Nabvar/>
 
 <div className="container">
 <h2 className="text-danger mt-3">Personajes</h2>
@@ -64,7 +64,7 @@ return <div class="col">
       <p class="card-text">Gender: {item.gender}</p>
       <p class="card-text">Hair Color: {item.hair_color}</p>
       <p class="card-text">Eye-Color: {item.eye_color}</p>
-      <button className="btn btn-outline-primary"><Link to="/About">ir about</Link></button>
+      <button className="btn btn-outline-primary"><Link to={`/About`}>ir about</Link></button>
       <button className="far fa-heart ml-3"></button>
     </div>
   </div>
