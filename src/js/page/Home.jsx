@@ -9,6 +9,7 @@ const Home = () => {
 const [personajes,setPersonajes] = useState();
 const [planetas,setPlanetas] = useState();
 
+// get Planetas
 useEffect(()=>{
   var requestOptions = {
     method: 'GET',
@@ -25,6 +26,8 @@ useEffect(()=>{
     
 
 },[])
+
+// get Personajes
 useEffect(()=>{
   var requestOptions = {
     method: 'GET',
@@ -44,10 +47,10 @@ useEffect(()=>{
 
 
 	return (
-
+/*Se llama a nabvar y se llama a los personajes y planetas en los cards */
 <>
-<Nabvar/>
 
+<Nabvar/>
 <div className="container">
 <h2 className="text-danger mt-3">Personajes</h2>
 </div>
@@ -64,7 +67,7 @@ return <div class="col">
       <p class="card-text">Gender: {item.gender}</p>
       <p class="card-text">Hair Color: {item.hair_color}</p>
       <p class="card-text">Eye-Color: {item.eye_color}</p>
-      <button className="btn btn-outline-primary"><Link to={`/About`}>ir about</Link></button>
+      <button className="btn btn-outline-primary"><Link to={`About/${item.name}`}>ir about</Link></button>
       <button className="far fa-heart ml-3"></button>
     </div>
   </div>
