@@ -28,7 +28,7 @@ const About = () => {
 </div>
 </nav>
         
-        <h2>welcome to mami about</h2>
+        <h2>welcome to about</h2>
         <p>estas en about</p>
     
         
