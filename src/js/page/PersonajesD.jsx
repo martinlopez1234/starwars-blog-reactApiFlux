@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const About = () => {
   
 	return (
-
+/* Se agrega Nabvar y contenido de la pagina */
 <>
 <nav class="navbar navbar-expand-lg navbar-dark bg-light">
       <div class="container">
