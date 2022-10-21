@@ -34,7 +34,7 @@ useEffect(()=>{
     redirect: 'follow'
   };
   
-  fetch("https://swapi.dev/api/people/", requestOptions)
+  fetch("https://swapi.tech/api/people/", requestOptions)
     .then(response => response.json())
     .then(result => {
       console.log(result)
@@ -64,10 +64,8 @@ return <div class="col">
   <img  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpdvATSPHH4Tt6TJyc4JFtJy0zMwSOj57xpRvOZfLGfuErJXWlIZWLjxbXItN4s1Drt-w&usqp=CAU" class="card-img-top" alt="..."/>
     <div class="card-body">
       <h5 class="card-title">{item.name}</h5>
-      <p class="card-text">Gender: {item.gender}</p>
-      <p class="card-text">Hair Color: {item.hair_color}</p>
-      <p class="card-text">Eye-Color: {item.eye_color}</p>
-      <button className="btn btn-outline-primary"><Link to={`About/${item.name}`}>ir about</Link></button>
+     
+      <button className="btn btn-outline-primary"><Link to={`About/${item.uid}`}>ir about</Link></button>
       <button className="far fa-heart ml-3"></button>
     </div>
   </div>
@@ -119,5 +117,3 @@ return <div class="col" key={index}>
 
 
 export default Home;
-
-
