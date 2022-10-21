@@ -8,6 +8,7 @@ const Home = () => {
   
 const [personajes,setPersonajes] = useState();
 const [planetas,setPlanetas] = useState();
+const [vehiculos,setVehiculos] = useState();
 
 // get Planetas
 useEffect(()=>{
@@ -16,7 +17,7 @@ useEffect(()=>{
     redirect: 'follow'
   };
   
-  fetch("https://swapi.dev/api/planets/", requestOptions)
+  fetch("https://swapi.tech/api/planets/", requestOptions)
     .then(response => response.json())
     .then(result => {
       console.log(result)
@@ -44,6 +45,23 @@ useEffect(()=>{
     
 
 },[])
+// get vehiculos
+useEffect(()=>{
+  var requestOptions = {
+    method: 'GET',
+    redirect: 'follow'
+  };
+  
+  fetch("https://www.swapi.tech/api/vehicles/", requestOptions)
+    .then(response => response.json())
+    .then(result => {
+      console.log(result)
+      setVehiculos(result)
+    })
+    .catch(error => console.log('error', error));
+    
+
+},[])
 
 
 	return (
@@ -65,7 +83,7 @@ return <div class="col">
     <div class="card-body">
       <h5 class="card-title">{item.name}</h5>
      
-      <button className="btn btn-outline-primary"><Link to={`About/${item.uid}`}>ir about</Link></button>
+      <button className="btn btn-outline-primary"><Link to={`PersonajesD/${item.uid}`}>ir about</Link></button>
       <button className="far fa-heart ml-3"></button>
     </div>
   </div>
@@ -93,8 +111,8 @@ return <div class="col" key={index}>
       <h5 class="card-title">{item.name}</h5>
       <p class="card-text">Population:{item.population}</p>
       <p class="card-text">Terrain:{item.terrain}</p>
-      <button className="btn btn-primary">more info</button>
-      <i className="far fa-heart"></i>
+      <button className="btn btn-outline-primary"><Link to={`PlanetasD/${item.uid}`}>ir about</Link></button>
+      <button className="far fa-heart ml-3"></button>
     </div>
   </div>
 </div>
@@ -105,6 +123,42 @@ return <div class="col" key={index}>
 }
 </div>
 </div>
+
+<div className="container">
+<h2 className="text-danger mt-3">Vehiculos</h2>
+</div>
+<div className="container mt-4">
+<div class=" row row-cols-2 row-cols-md-5 g-2">
+
+{vehiculos && vehiculos.results.map((item, index)=>{
+  {console.log("name",name)}
+return <div class="col">
+  <div class="card" key={index} >
+  <img  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpdvATSPHH4Tt6TJyc4JFtJy0zMwSOj57xpRvOZfLGfuErJXWlIZWLjxbXItN4s1Drt-w&usqp=CAU" class="card-img-top" alt="..."/>
+    <div class="card-body">
+      <h5 class="card-title">{item.name}</h5>
+     
+      <button className="btn btn-outline-primary"><Link to={`VehiculosD/${item.uid}`}>ir about</Link></button>
+      <button className="far fa-heart ml-3"></button>
+    </div>
+  </div>
+</div>
+
+
+})
+
+}
+</div>
+</div>
+
+ 
+<footer class="mt-7 p-4 text-center bg-dark text-white" >
+    Derechos Reservados© Martin Lopez
+        
+        </footer>
+
+
+
 </>
 
        
