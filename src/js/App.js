@@ -2,7 +2,9 @@ import { Routes, Route, Link } from "react-router-dom";
 import React from "react";
 import ReactDOM from "react-dom";
 import Home from "./page/Home.jsx";
-import About from "./page/PersonajesD.jsx";
+import PersonajesD from "./page/PersonajesD.jsx";
+import PlanetasD from "./page/PlanetasD.jsx";
+import VehiculosD from "./page/VehiculosD.jsx";
 
 const App = () => {
   
@@ -11,9 +13,9 @@ const App = () => {
 <>
 <Routes>
 <Route path="/" element={<Home/>} />
-<Route path="About/:uid" element={<About/>} />
-
-
+<Route path="PersonajesD/:uid" element={<PersonajesD/>} />
+<Route path="PlanetasD/:uid" element={<PlanetasD/>} />
+<Route path="VehiculosD/:uid" element={<VehiculosD/>} />
 </Routes>
 
 
@@ -26,3 +28,4 @@ const App = () => {
   
 
 export default App;
+
