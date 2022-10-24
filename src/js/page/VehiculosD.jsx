@@ -44,7 +44,7 @@ const VehiculosD = () => {
 <center><div className="container m-4 d-flex justify-content-center">
 <div className="row my-3">
           <div className="col-md-4">
-            <img src="http://via.placeholder.com/450x300" alt="logo" />
+            <img width={"420px"} src={`https://starwars-visualguide.com/assets/img/vehicles/${uid}.jpg`} alt="logo" />
           </div>
           <div className="col-md-6">
             <h1 className="display-4 text-center">
