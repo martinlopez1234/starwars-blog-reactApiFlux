@@ -79,7 +79,7 @@ useEffect(()=>{
   {console.log("name",name)}
 return <div class="col">
   <div class="card" key={index} >
-  <img  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpdvATSPHH4Tt6TJyc4JFtJy0zMwSOj57xpRvOZfLGfuErJXWlIZWLjxbXItN4s1Drt-w&usqp=CAU" class="card-img-top" alt="..."/>
+  <img  src={`https://starwars-visualguide.com/assets/img/characters/${item.uid}.jpg`} class="card-img-top" alt="..."/>
     <div class="card-body">
       <h5 class="card-title">{item.name}</h5>
      
@@ -106,7 +106,7 @@ return <div class="col">
   {console.log("name",name)}
 return <div class="col" key={index}>
   <div class="card">
-  <img  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpdvATSPHH4Tt6TJyc4JFtJy0zMwSOj57xpRvOZfLGfuErJXWlIZWLjxbXItN4s1Drt-w&usqp=CAU" class="card-img-top" alt="..."/>
+  <img  src={`https://starwars-visualguide.com/assets/img/planets/${item.uid}.jpg`} class="card-img-top" alt="..."/>
     <div class="card-body">
       <h5 class="card-title">{item.name}</h5>
       <p class="card-text">Population:{item.population}</p>
@@ -134,7 +134,7 @@ return <div class="col" key={index}>
   {console.log("name",name)}
 return <div class="col">
   <div class="card" key={index} >
-  <img  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpdvATSPHH4Tt6TJyc4JFtJy0zMwSOj57xpRvOZfLGfuErJXWlIZWLjxbXItN4s1Drt-w&usqp=CAU" class="card-img-top" alt="..."/>
+  <img  src={`https://starwars-visualguide.com/assets/img/vehicles/${item.uid}.jpg`} class="card-img-top" alt="..."/>
     <div class="card-body">
       <h5 class="card-title">{item.name}</h5>
      
