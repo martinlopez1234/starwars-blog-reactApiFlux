@@ -40,6 +40,13 @@ useEffect(()=>{
     
         setPersonajes(result)
       })
+
+      fetch("https://swapi.dev/api/people/", requestOptions)
+      .then(response => response.json())
+      .then(result => {
+    
+        setPersonajes2(result)
+      })
       .catch(error => console.log('error', error));
       
      
@@ -79,7 +86,12 @@ useEffect(()=>{
 <div className=" row row-cols-2 row-cols-md-5 g-2">
 
 {personajes && personajes.results.map((item, index)=>{
-  
+    const a =personajes2.results.filter((elem)=>{
+      return elem.name == item.name;
+      
+      }
+      
+      )
 
   
 return <div className="col" key={index}>
@@ -87,6 +99,7 @@ return <div className="col" key={index}>
   <img  src={`https://starwars-visualguide.com/assets/img/characters/${item.uid}.jpg`} className="card-img-top" alt="..."/>
     <div className="card-body">
       <h5 className="card-title">{item.name}</h5>
+      <p>Gender: {a[0].gender}</p>
     
      
      
@@ -123,7 +136,7 @@ return <div className="col" key={index}>
     <div className="card-body">
   
       <h5 className="card-title">{item.name}</h5>
-      <p>{a[0].terrain}</p>
+      <p>Terrain: {a[0].terrain}</p>
     
     
       <button className="btn btn-outline-primary"><Link to={`PlanetasD/${item.uid}`}>ir about</Link></button>
