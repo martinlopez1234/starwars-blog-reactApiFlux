@@ -32,7 +32,7 @@ useEffect(()=>{
      
       setPlanetas2(result)
     })
-    
+    .catch(error => console.log('error', error));
       // get personajes
       fetch("https://swapi.tech/api/people/", requestOptions)
       .then(response => response.json())
@@ -61,12 +61,7 @@ useEffect(()=>{
           
           setVehiculos(result)
         })
-        fetch("https://swapi.dev/api/vehicles/", requestOptions)
-        .then(response => response.json())
-        .then(result => {
-          
-          setVehiculos2(result)
-        })
+      
         .catch(error => console.log('error', error));
     
         
@@ -165,12 +160,7 @@ return <div className="col" key={index}>
 <div className=" row row-cols-2 row-cols-md-5 g-2">
 
 {vehiculos && vehiculos.results.map((item, index)=>{
-   const c =vehiculos2.results.filter((elem)=>{
-    return elem.name == item.name;
-    
-    }
-    
-    )
+
  
   
 return <div className="col" key={index}>
@@ -178,7 +168,7 @@ return <div className="col" key={index}>
   <img  src={`https://starwars-visualguide.com/assets/img/vehicles/${item.uid}.jpg`} className="card-img-top" alt="..."/>
     <div className="card-body">
       <h5 className="card-title">{item.name}</h5>
-      <p>cargo_capacity: {c[0].cargo_capacity}</p>
+   
     
       
      
