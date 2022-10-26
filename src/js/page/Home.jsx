@@ -82,7 +82,7 @@ useEffect(()=>{
   
 
   
-return <div className="col">
+return <div className="col" key={index}>
   <div className="card" key={index} >
   <img  src={`https://starwars-visualguide.com/assets/img/characters/${item.uid}.jpg`} className="card-img-top" alt="..."/>
     <div className="card-body">
@@ -110,7 +110,7 @@ return <div className="col">
 <div className=" row row-cols-2 row-cols-md-5 g-2">
 
 {planetas && planetas?.results.map((item,index)=>{
-const a =planetas2.results.filter((elem)=>{
+ const a =planetas2.results.filter((elem)=>{
   return elem.name == item.name;
   
   }
@@ -123,7 +123,8 @@ return <div className="col" key={index}>
     <div className="card-body">
   
       <h5 className="card-title">{item.name}</h5>
-      <p>Terrain: {a[0].terrain}</p>
+      <p>{a[0].terrain}</p>
+    
     
       <button className="btn btn-outline-primary"><Link to={`PlanetasD/${item.uid}`}>ir about</Link></button>
       <button className="far fa-heart ml-3"></button>
@@ -147,7 +148,7 @@ return <div className="col" key={index}>
 {vehiculos && vehiculos.results.map((item, index)=>{
  
   
-return <div className="col">
+return <div className="col" key={index}>
   <div className="card" key={index} >
   <img  src={`https://starwars-visualguide.com/assets/img/vehicles/${item.uid}.jpg`} className="card-img-top" alt="..."/>
     <div className="card-body">
