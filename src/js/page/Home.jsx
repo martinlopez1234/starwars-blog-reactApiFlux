@@ -19,7 +19,7 @@ useEffect(()=>{
     method: 'GET',
     redirect: 'follow'
   };
-  
+  // get planetas
   fetch("https://swapi.tech/api/planets/", requestOptions)
     .then(response => response.json())
     .then(result => {
@@ -37,61 +37,48 @@ useEffect(()=>{
         setPlanetas2(result)
       })
       .catch(error => console.log('error', error));
-},[])
-
-
-
-// get Personajes
-useEffect(()=>{
-  var requestOptions = {
-    method: 'GET',
-    redirect: 'follow'
-  };
-  
-  fetch("https://swapi.tech/api/people/", requestOptions)
-    .then(response => response.json())
-    .then(result => {
-      console.log(result)
-      setPersonajes(result)
-    })
-    .catch(error => console.log('error', error));
-    
-   
-    
-    fetch("https://swapi.dev/api/people/", requestOptions)
+      // get personajes
+      fetch("https://swapi.tech/api/people/", requestOptions)
       .then(response => response.json())
       .then(result => {
         console.log(result)
-        setPersonajes2(result)
+        setPersonajes(result)
       })
       .catch(error => console.log('error', error));
+      
+     
+      
+      fetch("https://swapi.dev/api/people/", requestOptions)
+        .then(response => response.json())
+        .then(result => {
+          console.log(result)
+          setPersonajes2(result)
+        })
+        .catch(error => console.log('error', error));
 
-},[])
-// get vehiculos
-useEffect(()=>{
-  var requestOptions = {
-    method: 'GET',
-    redirect: 'follow'
-  };
-  
-  fetch("https://www.swapi.tech/api/vehicles/", requestOptions)
-    .then(response => response.json())
-    .then(result => {
-      console.log(result)
-      setVehiculos(result)
-    })
-    .catch(error => console.log('error', error));
-
-    fetch("https://swapi.dev/api/vehicles/", requestOptions)
-    .then(response => response.json())
-    .then(result => {
-      console.log(result)
-      setVehiculos2(result)
-    })
-    .catch(error => console.log('error', error));
+        // get vehiculos
+        fetch("https://www.swapi.tech/api/vehicles/", requestOptions)
+        .then(response => response.json())
+        .then(result => {
+          console.log(result)
+          setVehiculos(result)
+        })
+        .catch(error => console.log('error', error));
     
-
+        fetch("https://swapi.dev/api/vehicles/", requestOptions)
+        .then(response => response.json())
+        .then(result => {
+          console.log(result)
+          setVehiculos2(result)
+        })
+        .catch(error => console.log('error', error));
 },[])
+
+
+
+
+
+
 
 
 	return (
