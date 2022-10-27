@@ -11,7 +11,7 @@ const [planetas,setPlanetas] = useState();
 const [vehiculos,setVehiculos] = useState();
 const [planetas2,setPlanetas2] = useState();
 const [personajes2,setPersonajes2] = useState();
-const [vehiculos2,setVehiculos2] = useState();
+
 
 // get Planetas
 useEffect(()=>{
@@ -26,12 +26,14 @@ useEffect(()=>{
      
       setPlanetas(result)
     })
+    .catch(error => console.log('error', error));
     fetch("https://swapi.dev/api/planets/", requestOptions)
     .then(response => response.json())
     .then(result => {
      
       setPlanetas2(result)
     })
+    
     .catch(error => console.log('error', error));
       // get personajes
       fetch("https://swapi.tech/api/people/", requestOptions)
@@ -40,6 +42,7 @@ useEffect(()=>{
     
         setPersonajes(result)
       })
+      .catch(error => console.log('error', error));
 
       fetch("https://swapi.dev/api/people/", requestOptions)
       .then(response => response.json())
