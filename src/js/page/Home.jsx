@@ -9,6 +9,7 @@ const Home = () => {
 const [personajes,setPersonajes] = useState();
 const [planetas,setPlanetas] = useState();
 const [vehiculos,setVehiculos] = useState();
+const [vehiculos2,setVehiculos2] = useState();
 const [planetas2,setPlanetas2] = useState();
 const [personajes2,setPersonajes2] = useState();
 
@@ -66,6 +67,15 @@ useEffect(()=>{
         })
       
         .catch(error => console.log('error', error));
+
+        fetch("https://swapi.dev/api/vehicles/", requestOptions)
+        .then(response => response.json())
+        .then(result => {
+          
+          setVehiculos2(result)
+        })
+      
+        .catch(error => console.log('error', error));
     
         
 },[])
@@ -104,6 +114,7 @@ return <div className="col" key={index}>
     <div className="card-body">
       <h5 className="card-title">{item.name}</h5>
       <p>Gender: {a[0].gender}</p>
+      <p>eye color : {a[0].eye_color}</p>
     
      
      
@@ -141,6 +152,7 @@ return <div className="col" key={index}>
   
       <h5 className="card-title">{item.name}</h5>
       <p>Terrain: {b[0].terrain}</p>
+      <p>population: {b[0].population}</p>
     
     
       <button className="btn btn-outline-primary"><Link to={`PlanetasD/${item.uid}`}>ir about</Link></button>
@@ -164,6 +176,12 @@ return <div className="col" key={index}>
 
 {vehiculos && vehiculos.results.map((item, index)=>{
 
+  const b =vehiculos2.results.filter((elem)=>{
+   return elem.name == item.name;
+   
+   }
+   
+   )
  
   
 return <div className="col" key={index}>
@@ -171,6 +189,7 @@ return <div className="col" key={index}>
   <img  src={`https://starwars-visualguide.com/assets/img/vehicles/${item.uid}.jpg`} className="card-img-top" alt="..."/>
     <div className="card-body">
       <h5 className="card-title">{item.name}</h5>
+      <p>crew: {b[0].crew}</p>
    
     
       
