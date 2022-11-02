@@ -60,6 +60,32 @@ const VehiculosD = () => {
         <div className="col-md-2">
             <h5 className="text-center detailColor">Name</h5>
             <p className="text-center detailColor">{vehiculos.name}</p>
+
+          </div>
+          <div className="col-md-2">
+            <h5 className="text-center detailColor">manufacturer</h5>
+            <p className="text-center detailColor">{vehiculos.manufacturer}</p>
+            
+          </div>
+          <div className="col-md-2">
+            <h5 className="text-center detailColor">cost_In_Credits</h5>
+            <p className="text-center detailColor">{vehiculos.cost_in_credits}</p>
+            
+          </div>
+          <div className="col-md-2">
+            <h5 className="text-center detailColor">Crew</h5>
+            <p className="text-center detailColor">{vehiculos.crew}</p>
+            
+          </div>
+          <div className="col-md-2">
+            <h5 className="text-center detailColor">Consumables</h5>
+            <p className="text-center detailColor">{vehiculos.consumables}</p>
+            
+          </div>
+          <div className="col-md-2">
+            <h5 className="text-center detailColor">Model</h5>
+            <p className="text-center detailColor">{vehiculos.model}</p>
+            
           </div>
         
           </div>
