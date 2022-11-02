@@ -29,7 +29,7 @@ const About = () => {
         </button>
         <div className="btn-group">
   <button type="button" className="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-    Favorites
+    Favorites 0
   </button>
   <ul className="dropdown-menu">
     <li><a className="dropdown-item" href="#">Action</a></li>

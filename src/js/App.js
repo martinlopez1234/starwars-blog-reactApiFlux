@@ -5,6 +5,7 @@ import Home from "./page/Home.jsx";
 import PersonajesD from "./page/PersonajesD.jsx";
 import PlanetasD from "./page/PlanetasD.jsx";
 import VehiculosD from "./page/VehiculosD.jsx";
+import injectContext from "./store/appContext.js";
 
 const App = () => {
   
@@ -27,5 +28,5 @@ const App = () => {
 
   
 
-export default App;
+export default injectContext(App);
 

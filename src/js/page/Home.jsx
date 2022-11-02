@@ -1,11 +1,12 @@
-import React,{useEffect,useState} from "react";
+import React,{useEffect,useState, useContext} from "react";
 import { Link } from "react-router-dom";
 import Nabvar from "../component/Nabvar.jsx";
+import { Context } from "../store/appContext.js";
 
 //create your first component
 
 const Home = () => {
-  
+const {store, actions} = useContext(Context);
 const [personajes,setPersonajes] = useState();
 const [planetas,setPlanetas] = useState();
 const [vehiculos,setVehiculos] = useState();
@@ -76,8 +77,35 @@ useEffect(()=>{
 	return (
 /*Se llama a nabvar y se llama a los personajes y planetas en los cards */
 <>
+<nav className="navbar navbar-expand-lg navbar-dark bg-light">
+      <div className="container">
+        <a className="navbar-brand" href="#"><img width="100px" src="https://logos-world.net/wp-content/uploads/2020/11/Star-Wars-Logo.png"/></a>
+        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div className="btn-group">
+  <button type="button" className="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+    Favorites {store.favorites.length}
+  </button>
+  <ul className="dropdown-menu">
+  {store.favorites.map((item, index)=>{
+  return (
+    <li key={index} >
+      {item}
+      <i className="eliminar " ><img className="float-end" width="20px" src="https://cdn-icons-png.flaticon.com/512/565/565491.png"/></i>
+    </li>
 
-<Nabvar/>
+  );
+})}
+  
+  </ul>
+</div>
+</div>
+</nav>
+
+
+
+
 <div className="container">
 <h2 className="text-danger mt-3">Personajes</h2>
 </div>
@@ -97,8 +125,8 @@ return <div className="col" key={index}>
     
      
      
-      <button className="btn btn-outline-primary"><Link to={`PersonajesD/${item.uid}`}>ir about</Link></button>
-      <button onClick={() => alert(item.name)} className="btn btn-outline-warning float-end far fa-heart ml-3"></button>
+      <button className="btn btn-outline-primary"><Link to={`PersonajesD/${item.uid}`}>Learn more!</Link></button>
+      <button onClick={() => actions.setFavorites(item.name)} className="btn btn-outline-warning float-end far fa-heart ml-3"></button>
     </div>
   </div>
 </div>
@@ -128,8 +156,8 @@ return <div className="col" key={index}>
     
     
     
-      <button className="btn btn-outline-primary"><Link to={`PlanetasD/${item.uid}`}>ir about</Link></button>
-      <button className="btn btn-outline-warning float-end far fa-heart ml-3"></button>
+      <button className="btn btn-outline-primary"><Link to={`PlanetasD/${item.uid}`}>Learn more!</Link></button>
+      <button onClick={() => actions.setFavorites(item.name)} className="btn btn-outline-warning float-end far fa-heart ml-3"></button>
     </div>
   </div>
 </div>
@@ -162,8 +190,8 @@ return <div className="col" key={index}>
       
      
      
-      <button className="btn btn-outline-primary"><Link to={`VehiculosD/${item.uid}`}>ir about</Link></button>
-      <button className="btn btn-outline-warning float-end far fa-heart ml-3"></button>
+      <button className="btn btn-outline-primary"><Link to={`VehiculosD/${item.uid}`}>Learn more!</Link></button>
+      <button onClick={() => actions.setFavorites(item.name)} className="btn btn-outline-warning float-end far fa-heart ml-3"></button>
     </div>
   </div>
 </div>
