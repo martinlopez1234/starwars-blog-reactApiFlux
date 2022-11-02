@@ -60,9 +60,35 @@ const PlanetasD = () => {
         <div className="col-md-2">
             <h5 className="text-center detailColor">Name</h5>
             <p className="text-center detailColor">{planetas.name}</p>
+            </div>
+            <div className="col-md-2">
+            <h5 className="text-center detailColor">Rotation_Period</h5>
+            <p className="text-center detailColor">{planetas.rotation_period}</p>
+            </div>
+            <div className="col-md-2">
+            <h5 className="text-center detailColor">Orbital_Period</h5>
+            <p className="text-center detailColor">{planetas.orbital_period}</p>
+            </div>
+            <div className="col-md-2">
+            <h5 className="text-center detailColor">Climate</h5>
+            <p className="text-center detailColor">{planetas.climate}</p>
+            </div>
+            <div className="col-md-2">
+            <h5 className="text-center detailColor">Gravity</h5>
+          
+            <p className="text-center detailColor">{planetas.gravity}</p>
+            </div>
+            <div className="col-md-2">
+            <h5 className="text-center detailColor">terrain</h5>
+            <p className="text-center detailColor">{planetas.terrain}</p>
+            </div>
+            
+            
+         
+          
           </div>
         
-          </div>
+          
       
     </>
 	);
