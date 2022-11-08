@@ -9,7 +9,16 @@ const getState = ({ getStore, getActions, setStore }) => {
 			setFavorites: name => {
 				const store = getStore();
 				setStore({ favorites: [...store.favorites, name] });
-			}
+			},
+			deleteFavorites: name => {
+				const favs = getStore().favorites;
+				favs.splice(name, 1);
+				setStore({ favorites: favs });
+				localStorage.setItem(
+				  "favorites",
+				  JSON.stringify(getStore().favorites)
+				);
+			  }
 		}
 	};
 };
