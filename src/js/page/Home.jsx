@@ -16,6 +16,8 @@ var p = "PersonajesD";
 var a = "PlanetasD";
 // get Planetas
 useEffect(()=>{
+  actions.fetchPeople();
+  actions.fetchPlanet();
   var requestOptions = {
     method: 'GET',
     redirect: 'follow'
@@ -31,28 +33,9 @@ useEffect(()=>{
     
     .catch(error => console.log('error', error));
       // get personajes
-      fetch("https://swapi.tech/api/people/", requestOptions)
-      .then(response => response.json())
-      .then(result => {
-    
-        setPersonajes(result)
-      })
-      .catch(error => console.log('error', error));
-
-      fetch("https://swapi.dev/api/people/", requestOptions)
-      .then(response => response.json())
-      .then(result => {
-    
-        setPersonajes2(result)
-      })
-      .catch(error => console.log('error', error));
+ 
       
-     
-    
-    
-    
-
-        // get vehiculos
+     // get vehiculos
         fetch("https://www.swapi.tech/api/vehicles/", requestOptions)
         .then(response => response.json())
         .then(result => {
@@ -78,48 +61,8 @@ useEffect(()=>{
 	return (
 /*Se llama a nabvar y se llama a los personajes y planetas en los cards */
 <>
-<nav className="navbar navbar-expand-lg navbar-dark bg-light">
-      <div className="container">
-        <a className="navbar-brand" href="#"><img width="100px" src="https://logos-world.net/wp-content/uploads/2020/11/Star-Wars-Logo.png"/></a>
-        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <div className="btn-group">
-  <button type="button" className="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-    Favorites {store.favorites.length+store.favoritess.length}
-  </button>
-  <ul className="dropdown-menu">
-  
-  {store.favorites.map((item,index)=>{
-  return (
-    <li  key={index}>
-      <Link to={`${p}/${item.uid}`}>{item.name}</Link>
-      
-      <i className="eliminar " onClick={() => {
-                        actions.deleteFavorites(index);
-                      }} ><img className="float-end" width="20px" src="https://cdn-icons-png.flaticon.com/512/565/565491.png"/></i>
-    </li>
 
-  );
-})}
-  {store.favoritess.map((i,index)=>{
-  return (
-    <li  key={index}>
-      <Link to={`${a}/${i.uid}`}>{i.name}</Link>
-      
-      <i className="eliminar " onClick={() => {
-                        actions.deleteFavoritess(index);
-                      }} ><img className="float-end" width="20px" src="https://cdn-icons-png.flaticon.com/512/565/565491.png"/></i>
-    </li>
-
-  );
-})}
-  
-  </ul>
-</div>
-</div>
-</nav>
-
+<Nabvar/>
 
 
 
@@ -129,7 +72,7 @@ useEffect(()=>{
 <div className="container mt-4">
 <div className=" row row-cols-2 row-cols-md-5 g-2">
 
-{personajes && personajes.results.map((item, index)=>{
+{store.peopleList.map((item, index)=>{
   
 
   
@@ -143,7 +86,13 @@ return <div className="col" key={index}>
      
      
       <button className="btn btn-outline-primary"><Link to={`PersonajesD/${item.uid}`}>Learn more!</Link></button>
-      <button onClick={() => actions.setFavorites(item)} className="btn btn-outline-warning float-end far fa-heart ml-3"></button>
+      {store.favorites.includes(item) ? <i className="btn btn-outline-warning float-end fas fa-heart ml-3">
+									
+                  </i>  : (
+								<button onClick={() => actions.setFavorites(item)} className="btn btn-outline-warning float-end far fa-heart ml-3">
+									
+								</button>
+							)}
     </div>
   </div>
 </div>
@@ -161,7 +110,7 @@ return <div className="col" key={index}>
 <div className="container mt-4">
 <div className=" row row-cols-2 row-cols-md-5 g-2">
 
-{planetas && planetas?.results.map((i,index)=>{
+{store.planetList.map((i,index)=>{
  
 
 return <div className="col" key={index}>
@@ -174,7 +123,11 @@ return <div className="col" key={index}>
     
     
       <button className="btn btn-outline-primary"><Link to={`PlanetasD/${i.uid}`}>Learn more!</Link></button>
-      <button onClick={() => actions.setFavoritess(i)} className="btn btn-outline-warning float-end far fa-heart ml-3"></button>
+      {store.favoritess.includes(i) ? "" : (
+								<button onClick={() => actions.setFavoritess(i)} className="btn btn-outline-warning float-end far fa-heart ml-3">
+									
+								</button>
+							)}
     </div>
   </div>
 </div>
