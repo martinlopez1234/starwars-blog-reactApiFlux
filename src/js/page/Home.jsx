@@ -12,7 +12,8 @@ const [planetas,setPlanetas] = useState();
 const [vehiculos,setVehiculos] = useState();
 
 
-
+var p = "PersonajesD";
+var a = "PlanetasD";
 // get Planetas
 useEffect(()=>{
   var requestOptions = {
@@ -85,15 +86,29 @@ useEffect(()=>{
         </button>
         <div className="btn-group">
   <button type="button" className="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-    Favorites {store.favorites.length}
+    Favorites {store.favorites.length+store.favoritess.length}
   </button>
   <ul className="dropdown-menu">
+  
   {store.favorites.map((item,index)=>{
   return (
-    <li key={index} >
-      <Link to={`PersonajesD/${item.uid}`}>{item.name}</Link>
+    <li  key={index}>
+      <Link to={`${p}/${item.uid}`}>{item.name}</Link>
+      
       <i className="eliminar " onClick={() => {
                         actions.deleteFavorites(index);
+                      }} ><img className="float-end" width="20px" src="https://cdn-icons-png.flaticon.com/512/565/565491.png"/></i>
+    </li>
+
+  );
+})}
+  {store.favoritess.map((i,index)=>{
+  return (
+    <li  key={index}>
+      <Link to={`${a}/${i.uid}`}>{i.name}</Link>
+      
+      <i className="eliminar " onClick={() => {
+                        actions.deleteFavoritess(index);
                       }} ><img className="float-end" width="20px" src="https://cdn-icons-png.flaticon.com/512/565/565491.png"/></i>
     </li>
 
@@ -146,20 +161,20 @@ return <div className="col" key={index}>
 <div className="container mt-4">
 <div className=" row row-cols-2 row-cols-md-5 g-2">
 
-{planetas && planetas?.results.map((item,index)=>{
+{planetas && planetas?.results.map((i,index)=>{
  
 
 return <div className="col" key={index}>
   <div className="card">
-  <img  src={`https://starwars-visualguide.com/assets/img/planets/${item.uid}.jpg`} className="card-img-top" alt="..."/>
+  <img  src={`https://starwars-visualguide.com/assets/img/planets/${i.uid}.jpg`} className="card-img-top" alt="..."/>
     <div className="card-body">
   
-      <h5 className="card-title">{item.name}</h5>
+      <h5 className="card-title">{i.name}</h5>
     
     
     
-      <button className="btn btn-outline-primary"><Link to={`PlanetasD/${item.uid}`}>Learn more!</Link></button>
-      <button onClick={() => actions.setFavorites(item.name)} className="btn btn-outline-warning float-end far fa-heart ml-3"></button>
+      <button className="btn btn-outline-primary"><Link to={`PlanetasD/${i.uid}`}>Learn more!</Link></button>
+      <button onClick={() => actions.setFavoritess(i)} className="btn btn-outline-warning float-end far fa-heart ml-3"></button>
     </div>
   </div>
 </div>
@@ -193,7 +208,7 @@ return <div className="col" key={index}>
      
      
       <button className="btn btn-outline-primary"><Link to={`VehiculosD/${item.uid}`}>Learn more!</Link></button>
-      <button onClick={() => actions.setFavorites(item.name)} className="btn btn-outline-warning float-end far fa-heart ml-3"></button>
+      <button onClick={() => actions.setFavorites(item)} className="btn btn-outline-warning float-end far fa-heart ml-3"></button>
     </div>
   </div>
 </div>
