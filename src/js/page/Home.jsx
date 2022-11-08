@@ -88,10 +88,10 @@ useEffect(()=>{
     Favorites {store.favorites.length}
   </button>
   <ul className="dropdown-menu">
-  {store.favorites.map((item, index)=>{
+  {store.favorites.map((item,index)=>{
   return (
     <li key={index} >
-      {item}
+      <Link to={`PersonajesD/${item.uid}`}>{item.name}</Link>
       <i className="eliminar " ><img className="float-end" width="20px" src="https://cdn-icons-png.flaticon.com/512/565/565491.png"/></i>
     </li>
 
@@ -126,7 +126,7 @@ return <div className="col" key={index}>
      
      
       <button className="btn btn-outline-primary"><Link to={`PersonajesD/${item.uid}`}>Learn more!</Link></button>
-      <button onClick={() => actions.setFavorites(item.name)} className="btn btn-outline-warning float-end far fa-heart ml-3"></button>
+      <button onClick={() => actions.setFavorites(item)} className="btn btn-outline-warning float-end far fa-heart ml-3"></button>
     </div>
   </div>
 </div>
@@ -223,3 +223,4 @@ return <div className="col" key={index}>
 
 
 export default Home;
+
