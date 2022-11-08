@@ -92,7 +92,9 @@ useEffect(()=>{
   return (
     <li key={index} >
       <Link to={`PersonajesD/${item.uid}`}>{item.name}</Link>
-      <i className="eliminar " ><img className="float-end" width="20px" src="https://cdn-icons-png.flaticon.com/512/565/565491.png"/></i>
+      <i className="eliminar " onClick={() => {
+                        actions.deleteFavorites(index);
+                      }} ><img className="float-end" width="20px" src="https://cdn-icons-png.flaticon.com/512/565/565491.png"/></i>
     </li>
 
   );
