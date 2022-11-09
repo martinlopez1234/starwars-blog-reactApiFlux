@@ -123,7 +123,9 @@ return <div className="col" key={index}>
     
     
       <button className="btn btn-outline-primary"><Link to={`PlanetasD/${i.uid}`}>Learn more!</Link></button>
-      {store.favoritess.includes(i) ? "" : (
+      {store.favoritess.includes(i) ? <i className="btn btn-outline-warning float-end fas fa-heart ml-3">
+									
+                  </i>  : (
 								<button onClick={() => actions.setFavoritess(i)} className="btn btn-outline-warning float-end far fa-heart ml-3">
 									
 								</button>
