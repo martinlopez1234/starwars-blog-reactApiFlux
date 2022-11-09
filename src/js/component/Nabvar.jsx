@@ -43,7 +43,7 @@ const Nabvar = () => {
       <Link to={`${a}/${i.uid}`}>{i.name}</Link>
       
       <i className="eliminar " onClick={() => {
-                        actions.deleteFavorites(index);
+                        actions.deleteFavoritess(index);
                       }} ><img className="float-end" width="20px" src="https://cdn-icons-png.flaticon.com/512/565/565491.png"/></i>
     </li>
 
